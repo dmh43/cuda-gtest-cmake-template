@@ -1,0 +1,7 @@
+find_package(CUDA REQUIRED)
+set(INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/include)
+set(INCLUDE_DIRS ${INCLUDE_DIRS} "C:/ProgramData/NVIDIA Corporation/CUDA Samples/v6.5/common/inc")
+message(${INCLUDE_DIRS})
+cuda_include_directories(${INCLUDE_DIRS})
+cuda_add_library(lib lib.cu)
+target_include_directories(lib PUBLIC ${INCLUDE_DIRS})
